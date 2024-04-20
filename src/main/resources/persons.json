@@ -26,4 +26,18 @@
   "phone" : "3001234567",
   "role" : "USER",
   "birthdate" : "1990-01-01"
+}, {
+  "id" : 123456,
+  "idType" : "CC",
+  "firstname" : "Ca",
+  "lastname" : "Salas",
+  "password" : "$2a$10$XnXmJDnov0mFhyj1IHBq1ucdKPp5aQiAcmre5HFrp6A7q2ZePniTm",
+  "mail" : "esteban.salas@example.com",
+  "country" : "Colombia",
+  "province" : "Antioquia",
+  "city" : "Medellin",
+  "residence" : "Calle 123 #45-67",
+  "phone" : "3001234567",
+  "role" : "User",
+  "birthdate" : "1990-01-01"
 } ]
