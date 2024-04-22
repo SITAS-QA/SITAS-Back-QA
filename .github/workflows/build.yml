@@ -29,5 +29,18 @@ jobs:
       - name: Build with Maven Wrapper
         run: ./mvnw clean install
 
-      - name: Run with Spring Boot
-        run: ./mvnw spring-boot:run
+      - name: Generate coverage report
+        run: ./mvnw test jacoco:report
+
+      - name: Run SonarScanner
+        uses: sonarsource/sonar-scanner-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: "https://sonarcloud.io"
+        with:
+          projectBaseDir: .
+          args: >
+            -Dsonar.organization=SITAS-QA
+            -Dsonar.projectKey=SITAS-QA_SITAS-Back-QA
+            -Dsonar.sources=.
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
