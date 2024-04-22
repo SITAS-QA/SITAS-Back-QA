@@ -29,8 +29,8 @@ jobs:
       - name: Grant execute permission for mvnw
         run: chmod +x ./mvnw
 
-      - name: Build with Maven Wrapper
-        run: ./mvnw clean install
+      - name: Install dependencies
+        run: ./mvnw dependency:resolve
 
       - name: Generate coverage report
         run: ./mvnw test jacoco:report
